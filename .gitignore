@@ -1,0 +1,13 @@
+# Python leftovers
+__pycache__/
+*.pyc
+
+# Videos and recordings (too big for Git)
+*.mp4
+*.avi
+recordings/
+
+# Isaac Sim output
+logs/
+*.usd
+*.usda
