@@ -30,14 +30,16 @@ robot = Articulation("/World/kuka")
 kuka_orange = PreviewSurfaceMaterial("/Visual_materials/orange")
 kuka_orange.set_input_values("diffuseColor", [1.0, 0.5, 0.0])
 
-table_gray = PreviewSurfaceMaterial("/Visual_materials/dark_grey")
+table_gray = PreviewSurfaceMaterial("/Visual_materials/dark_gray")
 table_gray.set_input_values("diffuseColor", [0.3, 0.3, 0.3])
 
 pallet_wood = PreviewSurfaceMaterial("/Visual_materials/light_wood")
 pallet_wood.set_input_values("diffuseColor", [0.8, 0.6, 0.4])
 
-box_cardboard = PreviewSurfaceMaterial("/Visual_materials/cardboard_brawn")
+box_cardboard = PreviewSurfaceMaterial("/Visual_materials/cardboard_brown")
 box_cardboard.set_input_values("diffuseColor", [0.6, 0.45, 0.3])
+
+# ---Sectioon 4: pick table and pallet ---
 
 
 # --- Final section: run the simulation ---
