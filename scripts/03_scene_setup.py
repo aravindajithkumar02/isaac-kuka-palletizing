@@ -11,6 +11,19 @@ from isaacsim.core.experimental.objects import Cube, DistantLight, GroundPlane
 from isaacsim.core.experimental.prims import Articulation, GeomPrim, RigidPrim, XformPrim
 from isaacsim.storage.native import get_assets_root_path
 
+# ---Section 1b cell layout( all values in meters)---
+
+TABLE_SIZE = [1.2,0.8,0.8]
+TABLE_POSITION = [0.0,1.6, TABLE_SIZE[2]/2]
+TABLE_TOP_Z = TABLE_SIZE[2]
+
+PALLET_SIZE = [1.2,0.8,0.15]
+PALLET_POSITION = [1.6,0.0, PALLET_SIZE[2]/2]
+PALLET_TOP_Z = PALLET_SIZE[2]
+
+BOX_SIZE = 0.3
+BOX_Z = TABLE_TOP_Z + BOX_SIZE/2
+
 # --- Section 2: floor, light, robot ---
 
 KUKA_USD = get_assets_root_path() + "/Isaac/Robots_Multiphysics/Kuka/KR210_L150/kr210_l150.usda"
@@ -45,18 +58,18 @@ XformPrim("/World/kuka").apply_visual_materials(kuka_orange)
 
 pick_table_shape = Cube(
     paths="/World/pick_table",
-    positions=[0, 1.6, 0.4],
+    positions=TABLE_POSITION,
     sizes=1.0,
-    scales=[1.2, 0.8, 0.8],
+    scales=TABLE_SIZE,
 )
 pick_table_shape.apply_visual_materials(table_gray)
 pick_table_geometry = GeomPrim(paths=pick_table_shape.paths, apply_collision_apis=True)
 
 pallets_shape = Cube(
     paths="/World/pallets",
-    positions=[1.6, 0, 0.075],
+    positions=PALLET_POSITION,
     sizes=1.0,
-    scales=[1.2, 0.8, 0.15],
+    scales=PALLET_SIZE,
 )
 pallets_shape.apply_visual_materials(pallet_wood)
 pallets_geometry = GeomPrim(paths=pallets_shape.paths, apply_collision_apis=True)
@@ -65,9 +78,9 @@ pallets_geometry = GeomPrim(paths=pallets_shape.paths, apply_collision_apis=True
 
 box_1_shape = Cube(
   paths="/World/box_1",
-  positions=[-0.25,1.38,0.95],
+  positions=[-0.25,1.38,BOX_Z],
   sizes=1.0,
-  scales=[0.3, 0.3, 0.3],
+  scales=[BOX_SIZE, BOX_SIZE, BOX_SIZE],
 )
 box_1_shape.apply_visual_materials(box_cardboard)
 box_1 = RigidPrim(paths=box_1_shape.paths)
@@ -75,9 +88,9 @@ box_1_geometry = GeomPrim(paths=box_1_shape.paths, apply_collision_apis=True)
 
 box_2_shape = Cube(
   paths="/World/box_2",
-  positions=[0.25,1.38,0.95],
+  positions=[0.25,1.38,BOX_Z],
   sizes=1.0,
-  scales=[0.3, 0.3, 0.3],
+  scales=[BOX_SIZE, BOX_SIZE, BOX_SIZE],
 )
 box_2_shape.apply_visual_materials(box_cardboard)
 box_2 = RigidPrim(paths=box_2_shape.paths)
@@ -85,9 +98,9 @@ box_2_geometry = GeomPrim(paths=box_2_shape.paths, apply_collision_apis=True)
 
 box_3_shape = Cube(
   paths="/World/box_3",
-  positions=[-0.25,1.82,0.95],
+  positions=[-0.25,1.82,BOX_Z],
   sizes=1.0,
-  scales=[0.3, 0.3, 0.3],
+  scales=[BOX_SIZE, BOX_SIZE, BOX_SIZE],
 )
 box_3_shape.apply_visual_materials(box_cardboard)
 box_3 = RigidPrim(paths=box_3_shape.paths)
@@ -95,9 +108,9 @@ box_3_geometry = GeomPrim(paths=box_3_shape.paths, apply_collision_apis=True)
 
 box_4_shape = Cube(
   paths="/World/box_4",
-  positions=[0.25,1.82,0.95],
+  positions=[0.25,1.82,BOX_Z],
   sizes=1.0,
-  scales=[0.3, 0.3, 0.3],
+  scales=[BOX_SIZE, BOX_SIZE, BOX_SIZE],
 )
 box_4_shape.apply_visual_materials(box_cardboard)
 box_4 = RigidPrim(paths=box_4_shape.paths)
