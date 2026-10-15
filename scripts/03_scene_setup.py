@@ -61,6 +61,49 @@ pallets_shape = Cube(
 pallets_shape.apply_visual_materials(pallet_wood)
 pallets_geometry = GeomPrim(paths=pallets_shape.paths, apply_collision_apis=True)
 
+# ---Section 5: boxes ---
+
+box_1_shape = Cube(
+  paths="/World/box_1",
+  positions=[-0.25,1.38,0.95],
+  sizes=1.0,
+  scales=[0.3, 0.3, 0.3],
+)
+box_1_shape.apply_visual_materials(box_cardboard)
+box_1 = RigidPrim(paths=box_1_shape.paths)
+box_1_geometry = GeomPrim(paths=box_1_shape.paths, apply_collision_apis=True)
+
+box_2_shape = Cube(
+  paths="/World/box_2",
+  positions=[0.25,1.38,0.95],
+  sizes=1.0,
+  scales=[0.3, 0.3, 0.3],
+)
+box_2_shape.apply_visual_materials(box_cardboard)
+box_2 = RigidPrim(paths=box_2_shape.paths)
+box_2_geometry = GeomPrim(paths=box_2_shape.paths, apply_collision_apis=True)
+
+box_3_shape = Cube(
+  paths="/World/box_3",
+  positions=[-0.25,1.82,0.95],
+  sizes=1.0,
+  scales=[0.3, 0.3, 0.3],
+)
+box_3_shape.apply_visual_materials(box_cardboard)
+box_3 = RigidPrim(paths=box_3_shape.paths)
+box_3_geometry = GeomPrim(paths=box_3_shape.paths, apply_collision_apis=True)
+
+box_4_shape = Cube(
+  paths="/World/box_4",
+  positions=[0.25,1.82,0.95],
+  sizes=1.0,
+  scales=[0.3, 0.3, 0.3],
+)
+box_4_shape.apply_visual_materials(box_cardboard)
+box_4 = RigidPrim(paths=box_4_shape.paths)
+box_4_geometry = GeomPrim(paths=box_4_shape.paths, apply_collision_apis=True)
+
+
 
 # --- Final section: run the simulation ---
 
