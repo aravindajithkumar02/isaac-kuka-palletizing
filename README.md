@@ -14,7 +14,7 @@ on a Euro pallet.
 |---|---|---|
 | 1 | Launch Isaac Sim from standalone Python | Done |
 | 2 | Load and inspect the KUKA KR210 (6 DOF, joints A1–A6) | Done |
-| 3 | Cell layout: floor, lighting, pick table, Euro pallet, materials | In progress |
+| 3 | Cell layout: floor, lighting, pick table, Euro pallet, materials | Done|
 | 4 | Motion control of the end effector (cuMotion / RMPflow) | Planned |
 | 5 | Tool centre point and downward tool orientation | Planned |
 | 6 | Vacuum (surface) gripper | Planned |
